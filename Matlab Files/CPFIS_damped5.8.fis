@@ -1,0 +1,45 @@
+[System]
+Name='CPFIS_damped5.8'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=6
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Theta'
+Range=[-3.14159265358979 3.14159265358979]
+NumMFs=3
+MF1='Positive':'trapmf',[0 1 4 4]
+MF2='Negative':'trapmf',[-4 -4 -1 0]
+MF3='zero':'trimf',[-1 0 1]
+
+[Input2]
+Name='Velocity'
+Range=[-10 10]
+NumMFs=2
+MF1='Negative':'trimf',[-18.34 -10 10]
+MF2='Positive':'trimf',[-10 10 18.34]
+
+[Output1]
+Name='Torque'
+Range=[-80 80]
+NumMFs=5
+MF1='NM':'trimf',[-32 -16 0]
+MF2='PM':'trimf',[0 16 32]
+MF3='NL':'trimf',[-240 -80 -16]
+MF4='PL':'trimf',[16 80 120]
+MF5='zero':'trapmf',[-7.5 -1.5 1.5 7.5]
+
+[Rules]
+2 1, 3 (1) : 1
+1 2, 4 (1) : 1
+1 1, 1 (1) : 1
+2 2, 2 (1) : 1
+3 1, 5 (1) : 1
+3 2, 5 (1) : 1
