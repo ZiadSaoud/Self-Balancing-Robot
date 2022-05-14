@@ -2,7 +2,7 @@
 ## Description
 This is a fuzzy logic based Self-Balancing robot project. We tried to balance the robot using a fuzzy controller.
 The tilt angle is measured using the MPU6050 accelerometer and gyroscope sensor, it is coupled with a Kalman filter on the controller to estimate the tilt angle theta of the robot.
-The mathematical model of the robot was derived and the unknown parameters of the DC motors where estimated using MATLAB.
+The mathematical model of the robot was derived and the unknown parameters of the DC motors where estimated using MATLAB.[Demo link](https://youtu.be/-Y4fEU-bn3E)
 #
 ![IMG_2561](https://user-images.githubusercontent.com/69092782/168445610-61b3493a-85fa-40f7-91e9-5bcaeddf0081.JPG)
 #
